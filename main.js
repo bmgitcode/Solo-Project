@@ -1,21 +1,19 @@
 import React, { useEffect, useState }  from 'react';
 import { createRoot } from 'react-dom/client';
-import Todo from './list';
+// import Todo from './list';
+import './stylesheets/styles.css';
 
 
 // const url = 'https://api.yelp.com/v3/businesses/search?term=';
 // const url = 'www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
 
-const url = 'https://api.spoonacular.com/recipes/random?apiKey=71f167b55012488f9f3572c3f56e10af';
+const url = 'https://api.spoonacular.com/recipes/random?apiKey=7c823f1edf7f4f01a4cb3aeb51538c23';
 // const options = {
 // 	method: 'GET'
 // };
 
 const FoodApp = () => {
   const [recipe, setRecipe] = useState(null)
-
-
-
 
   console.log('this is before', recipe)
   const fetcher = async () => {
@@ -34,7 +32,7 @@ const FoodApp = () => {
 
 
   return (
-    <><div>
+    <><div className= 'firstdiv'>
       HELLO DOES THIS WORK???
     </div>
       {/* <div>
@@ -68,7 +66,7 @@ const FoodApp = () => {
 
           <div >
             {recipe.map((recipe) => (
-              <><div key={recipe.id} className="pt-6">
+              <><div key={recipe.id}>
 
                 <span>
                   <img
@@ -76,19 +74,22 @@ const FoodApp = () => {
                 </span>
               </div><div>
                   <h3>
-                  NAH MAKE THIS INSTEAD <br></br>
-                    {recipe.title}
+                  NAH MAKE THIS INSTEAD
                   </h3>
-
-                  <a
-                    href={recipe.sourceUrl}
-                  >
-
+                  <a href={recipe.sourceUrl}>
+                    <h2>
+                    {recipe.title}
+                    </h2>
                   </a>
+                  <button type="next" > NEW RECIPE</button>
+
+
+
                 </div></>
             ))}
           </div>
       )}
+
       </div></>
   )
 }

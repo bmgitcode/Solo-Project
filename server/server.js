@@ -23,6 +23,10 @@ app.get('/', (req, res) => {
   // sending index.html to browser
   return res.status(200).sendFile(path.join(__dirname, '../index.html'));
 });
+
+
+
+
 app.post('/', fetches.getFoodLocations, (req, res) => {
   console.log(locations)
   return res.status(200).json(res.locals.locations)
