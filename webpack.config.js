@@ -9,25 +9,26 @@ const isProduction = process.env.NODE_ENV == "production";
 const stylesHandler = MiniCssExtractPlugin.loader;
 
 const config = {
-  entry: "./src/index.js",
+  entry: "./main.js",
   output: {
     path: path.resolve(__dirname, "./build"),
     filename: "bundle.js"
   },
   devServer: {
+    historyApiFallback: true,
     static: {
       directory: path.join(__dirname, "./build"),
       publicPath: "./index.html",
     },
+    port: 8080,
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/': 'http://localhost:3000',
     }
   },
   plugins: [
     // generates new HTML file for application
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "./index.html"),
-      filename: "./index.html",
+      template: "index.html",
     }),
 
     new MiniCssExtractPlugin(),

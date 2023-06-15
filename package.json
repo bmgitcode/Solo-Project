@@ -4,9 +4,9 @@
   "description": "My solo project",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
-    "build": "webpack --mode=production --node-env=production",
-    "dev": "webpack serve --open --NODE_ENV=development",
+    "start": "NODE_ENV=production node server/server.js",
+    "build": "webpack",
+    "dev": "NODE_ENV=development webpack serve --open",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
@@ -41,6 +41,8 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
