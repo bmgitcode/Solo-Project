@@ -33,7 +33,7 @@ const FoodApp = () => {
 
   return (
     <><div className= 'firstdiv'>
-      HELLO DOES THIS WORK???
+      {/* HELLO DOES THIS WORK??? */}
     </div>
       {/* <div>
         <input></input>
